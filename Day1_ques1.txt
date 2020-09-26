@@ -1,0 +1,55 @@
+using System;
+namespace Assignments
+{
+    class Assignment01
+    {
+        static void Main(string[] args)
+        {
+            isValidDate(1997, 03, 10);
+            isValidDate(-55, 13, 78);
+            isValidDate(2012, 02, 29);
+            isValidDate(2000, 02, 29);
+            isValidDate(2020, 02, 30);
+            isValidDate(1984, 05, 31);
+            isValidDate(31, 05, 1745);
+            isValidDate(2018, 06, 31);
+            isValidDate(2006, 11, -55);
+            isValidDate(121, 07, 31);
+        }
+        static void isValidDate(int yyyy, int mm, int dd)
+        {
+            if (yyyy <= 1 || mm <1 || mm > 12 || dd < 1)
+            {
+                Console.WriteLine(yyyy + "/" + mm + "/" + dd + ": Invalid Date..!");
+            }
+            else
+            {
+                if ((yyyy % 4 == 0 || yyyy % 100 == 0) && yyyy % 400 != 0)
+                {
+                    if ((mm == 2 && dd > 29) || ((mm == 1 || mm == 3 || mm == 5 || mm == 7 || mm == 8 || mm == 10 || mm == 12) && dd > 31) || ((mm == 4 || mm == 6 || mm == 9 || mm == 11) && dd > 30))
+                    {
+                        if (dd >= 29)
+                        {
+                            Console.WriteLine(yyyy + "/" + mm + "/" + dd + ": Invalid Date..!");
+                        }
+                    }
+                    else
+                        Console.WriteLine(yyyy + "/" + mm + "/" + dd + ": Valid Date :)");
+                }
+                else
+                {
+                    if ((mm == 2 && dd > 28) || ((mm == 1 || mm == 3 || mm == 5 || mm == 7 || mm == 8 || mm == 10 || mm == 12) && dd > 31) || ((mm == 4 || mm == 6 || mm == 9 || mm == 11) && dd > 30))
+                    {
+                        if (dd >= 29)
+                        {
+                            Console.WriteLine(yyyy + "/" + mm + "/" + dd + ": Invalid Date..!");
+                        }
+                    }
+                    else
+                        Console.WriteLine(yyyy + "/" + mm + "/" + dd + ": Valid Date :)");
+                }
+            }
+ 
+        }
+    }
+}
